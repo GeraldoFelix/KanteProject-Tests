@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauê e Yasmom">
+    <meta name="description" content="Seu site para descobrir letras de músicas">
+    <link rel="icon" href="Imagens/Kante v2.png" type="image/png">
+    <title> Kante </title>
+    <style>
+        
+        *{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+        body{
+    min-height: 100vh;
+    background: rgb(37, 19, 49);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    }        
+            
+        header{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    /*background-image: linear-gradient(to top,  hsl(240, 100%, 0%) 25%, #20093C 75%, #090520 90%);*/
+    background-color: #070310;
+    color: white;
+    justify-content: space-between;
+    margin: 0px 0px 0px 0px;
+    align-items: center;
+    position: sticky;
+    z-index: 100;
+    top: 0px;
+    overflow: hidden;
+}
+
+/* -----------Menu do topo----------- */ 
+/* Menu lateral de opções */
+
+.menu-lateral {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ajusta o espaçamento entre o botão e o título */
+
+}
+
+h1{
+    top: 20px;
+    left: 15px;
+    position: absolute;
+}
+
+.tela-preta{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Fundo escuro */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 60;
+}
+
+.tela-preta.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.barra{
+    z-index: 98;
+    position: fixed;
+    left: -250px; /* Começa escondido */
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: #070310;
+    color: white;
+    padding-top: 60px;
+    transition: left 0.3s ease;
+}
+
+.barra ul{
+    padding-top: 10px;
+    margin: 0px;
+    list-style: none;
+
+}
+
+.barra li{
+    margin: 15px 0px 0px 30px;
+
+}
+
+.barra ul li a {
+    font-weight: bold;
+    font-size: 150px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.barra.active{ 
+    left: 0;
+}
+
+.menu-btn{
+    z-index: 99;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: left 0.25s;
+
+}
+
+.menu-btn.active{
+    left: 200px;
+    transition: left 0.35s;
+
+}
+
+/* =========== */
+
+/* Logo no menu */
+
+.logo-imagem{
+    width: 4.5em;
+    height: 4.5em;
+    background-color: whitesmoke;
+    padding: 5px;
+    border-radius: 100%;
+    margin: 5px;
+}
+
+.container-logo{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 5em;
+}
+
+
+/* =========== */
+
+/* Barra de pesquisa no menu */
+
+.barra-pesquisa{
+    height: 1.5em;
+    width: 30em;
+    border: 1px solid #ccc;
+    padding: 1.2em;
+    padding-left: 2.5em;
+    border-radius: 10px;
+    font-size: 0.9em;
+    background-color: #e9e9e9;
+    outline: none;
+}
+
+.barra-pesquisa::placeholder{
+    color: darkgray;
+}
+
+.barra-pesquisa:focus::placeholder{
+    color: gray;
+}
+
+.barra-pesquisa:focus{
+    background-color: rgb(77, 77, 77);
+    border: 2px solid white;
+}
+
+.lupa-imagem{
+    position: absolute;
+    margin: 5px 0px 0px 5px;
+    height: 1.5em;
+    width: 1.5em;
+}
+
+/* =========== */
+
+/* Opções no menu */
+
+.menu-topo li{
+    display: inline-block;
+    margin: 0px 50px 0px 0px;
+}
+
+.menu-topo li a{
+    font-size: 0.7rem;
+    text-decoration: none;
+    border: 0px solid #ccc;
+    border-radius: 25px;
+    background-color: #d9dbb3;
+    color: black;
+    padding: 15px;
+
+}
+
+.menu-topo li a:hover{
+    background-color: gray;
+
+}
+
+/* #endregion */
+.container-geral{
+    border-radius: 10px 10px 0 0;
+    width: 90vw;
+    min-height: 100vh;
+    margin: 10px 0px 0px 10px; /*100 px no topo e 50 px na esquerda */
+}
+
+.container-texto{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.8em;
+    color: white;
+    margin: 0px 0px 0px 50px;
+}
+
+.container-imagens{
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.organizador{
+    position: relative;
+    display: inline-block;
+}
+
+.imagens{
+    margin: 10px 0px 0px 100px;
+    width: 8em;
+    height: 8em;
+}
+
+.botao-tocar{
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 100%; 
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+
+}
+
+.container-1{
+    display: block;
+    margin: 20px 0px 100px 25px;
+    padding: 10px 0px 10px 0px;
+    border-radius: 30px;
+    width: 85vw;
+
+}
+.container-1 p{
+    top:180px;
+    left:100px;
+}
+.letras p{
+    color:white;
+    font-size: 1.2em; /* Tamanho de fonte para as letras */
+    line-height: 1.6; /* Espaçamento entre as linhas */
+    text-align: center; /* Alinhamento central para o texto */
+    margin-bottom: 20px;
+}
+
+.letras {
+    margin: 20px 0px 0px 250px;
+    padding: 20px;
+    max-width: 400px;
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+
+}
+
+.perfil {
+        text-align: center;
+        margin-bottom: 20px;
+        position: relative;
+        top: 40px;
+        left: 150px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+.perfil img{
+    border-radius: 25px;
+    width: 5em;
+    height: 5em;
+    margin-right: -40px;
+}
+
+.perfil a{
+    position: relative;
+    top: 40px;
+    right: 300px;
+    color: aliceblue;
+
+
+}
+.video{
+    background-color:gray;
+    width: 350px;
+    height: 200px;
+    position: absolute;
+    right:90px;
+    bottom: 150px;
+}
+
+/* #endregion */
+
+/* #region Footer */
+
+.rodape{
+    margin-left: 50px;
+    width: 90vw;
+    background:  rgb(31, 14, 43);
+    color: white;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+
+}
+
+.imagem-rodape{
+    width: 3em;
+    height: 3em;
+}
+
+.menu-rodape{
+    display: flex;
+    width: 100%;
+}
+
+.links-externos{
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.menu-lateral {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ajusta o espaçamento entre o botão e o título */
+
+}
+
+h1{
+    top: 20px;
+    left: 15px;
+    position: absolute;
+}
+
+.tela-preta{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Fundo escuro */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 60;
+}
+
+.tela-preta.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.barra{
+    z-index: 98;
+    position: fixed;
+    left: -250px; /* Começa escondido */
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: #070310;
+    color: white;
+    padding-top: 60px;
+    transition: left 0.3s ease;
+}
+
+.barra ul{
+    padding-top: 10px;
+    margin: 0px;
+    list-style: none;
+
+}
+
+.barra li{
+    margin: 15px 0px 0px 30px;
+
+}
+
+.barra ul li a {
+    font-weight: bold;
+    font-size: 150px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.barra.active{ 
+    left: 0;
+}
+
+.menu-btn{
+    z-index: 99;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: left 0.25s;
+
+}
+
+.menu-btn.active{
+    left: 200px;
+    transition: left 0.35s;
+
+}
+/* #endregion */
+
+
+    </style>
+
+    <script>
+        function abrirBarraLateral() {
+            const barra = document.querySelector(".barra")
+            const menuBtn = document.querySelector(".menu-btn");
+            const sobreposicao = document.querySelector(".tela-preta");
+        
+            document.querySelector(".tela-preta").classList.toggle("active");
+            document.querySelector(".barra").classList.toggle("active");
+            document.querySelector(".menu-btn").classList.toggle("active");
+        
+            if (barra.classList.contains("active")) {
+                menuBtn.innerHTML = "✖";
+            } else {
+                menuBtn.innerHTML = "☰";
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    
+    <header>
+
+        <div class="tela-preta" onclick="abrirBarraLateral()"> </div>
+       
+        <div class="menu-lateral">
+    
+            <button class="menu-btn" onclick="abrirBarraLateral()">☰</button>
+            
+    
+            <section class="barra">
+                <h1>Menu</h1>
+                <ul>
+                    <li>
+                        <a href = "../Pasta-html/main.html"> Início </a>
+                    </li>
+                    
+                    <li>
+                        <a href="../Pasta-html/historico.html"> Histórico </a>
+                    </li>
+
+                    <li>
+                        <a href="../Pasta-html/biblioteca.html"> Biblioteca </a>
+                    </li>
+                </ul>
+    
+            </section>
+        </div>
+
+        <a href="../Pasta-html/main.html" class="container-logo">
+            <img src="../Imagens/Kante.png" class="logo-imagem">
+        </a>
+
+        <div class="aparencia-barra-pesquisa">
+            <img src="../Imagens/Lupa_icon.png" class="lupa-imagem">
+            <input class="barra-pesquisa" type="text" placeholder="Procure sua música ou letra."> 
+        </div>
+
+        <div class="menu-topo">
+            <ul>
+                <li>
+                    <a href="../Pasta-html/login.html" target="_blank"> ENTRAR OU CADASTRAR-SE </a>
+                </li>
+            </ul>
+        </div>
+
+    </header>
+    <main class="container-geral">
+        <div class="video">
+            <iframe width="350" height="200" src="https://www.youtube.com/embed/sTMLq3nliLg?si=Omucf6XJXJFZi8Vr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="perfil">
+            <img src="https://s.mxmcdn.net/images-storage/albums4/9/7/9/8/0/4/77408979_500_500.jpg" class="imagens">
+            <p class="container-texto"> Never Ending Summer </p>
+            <a>Sleepy Soul</a>
+        </div>
+        <div class="container-1">
+
+            <div class="letras">
+                <p>
+                    Life by the door
+In case of emergency or any more
+Feels like a chore to me
+When it's alright                                       
+Then it's a bore
+Still you survive
+Just hoping for more
+I got no good advice
+Just follow what you please </p>
+
+<p>
+Why don't you
+Hit me with a fast one
+Go on and tell me
+Where you're head's at
+Like it even matters
+Hit me with a fast one
+Tell me the truth
+</p>
+
+<p>
+Lost in the faces again
+Looking for a window
+Looking for a friend
+Feels like a win to me
+When there's a fight
+Might hit the floor
+Then you get up
+Looking for more
+I got no good advice
+Just follow your own lead
+</p>
+
+<p>
+Why don't you
+Hit me with a fast one
+Go on and tell me
+Where you're head's at
+Like it even matters
+Hit me with a fast one
+Tell me the truth
+Why don't you
+Hit me with a fast one
+Go on and tell me
+Where you're head's at
+Like it even matters
+Hit me with a fast one
+Tell me the truth
+Why don't you
+Hit me with a fast one
+Go on and tell me
+Where you're head's at
+Like it even matters
+Hit me with a fast one
+Tell me the truth
+
+<p>
+Why don't you
+Hit me with a fast one
+Go on and tell me
+Where you're head's at
+Like it even matters
+Hit me with a fast one
+Tell me the truth
+
+</p>
+                </p>
+            </div>
+
+        
+        </div>
+        
+
+    </main>
+    <footer class="rodape"> 
+
+        <div class="menu-rodape">
+            <p> Sobre </p>
+
+            <div class="links-externos">
+                <a href="https://instagram.com/kkabriel_/" target="_blank">
+                    <img src="../Imagens/Instagram_logo.png" alt="Instagram" class="imagem-rodape">
+                </a>
+            </div>
+        </div>
+
+        <p> © 2025 Kante - Todos os direitos reservados.</p>
+
+    </footer>
+
+    </main>
+</body>
+</html>
