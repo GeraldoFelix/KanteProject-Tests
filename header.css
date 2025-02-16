@@ -1,0 +1,221 @@
+/* #region Header */
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+body{
+    min-height: 100vh;
+    background-image: linear-gradient(to top, hsl(240, 100%, 0%) 25%, #0D0319 60%, #20093C 75%, #090520 90%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    /*background-image: linear-gradient(to top,  hsl(240, 100%, 0%) 25%, #20093C 75%, #090520 90%);*/
+    background-color: #070310;
+    justify-content: space-between;
+    margin: 0px 0px 0px 0px;
+    align-items: center;
+    position: sticky;
+    z-index: 100;
+    top: 0px;
+
+}
+
+/* -----------Menu do topo----------- */ 
+/* Menu lateral de opções */
+
+.menu-lateral {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ajusta o espaçamento entre o botão e o título */
+
+}
+
+h1{
+    top: 20px;
+    left: 15px;
+    position: absolute;
+}
+
+.tela-preta{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Fundo escuro */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 60;
+}
+
+.tela-preta.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.barra{
+    z-index: 98;
+    position: fixed;
+    left: -250px; /* Começa escondido */
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: #070310;
+    color: white;
+    padding-top: 60px;
+    transition: left 0.3s ease;
+}
+
+.barra ul{
+    padding-top: 10px;
+    margin: 0px;
+    list-style: none;
+
+}
+
+.barra li{
+    margin: 15px 0px 0px 30px;
+
+}
+
+.barra ul li a {
+    font-weight: bold;
+    font-size: 150px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.barra.active{ 
+    left: 0;
+}
+
+.menu-btn{
+    z-index: 99;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: left 0.25s;
+
+}
+
+.menu-btn.active{
+    left: 200px;
+    transition: left 0.35s;
+
+}
+
+/* =========== */
+
+/* Logo no menu */
+
+.logo-imagem{
+    width: 4.5em;
+    height: 4.5em;
+    background-color: whitesmoke;
+    padding: 5px;
+    border-radius: 100%;
+    margin: 5px;
+}
+
+.container-logo{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 5em;
+}
+
+/* =========== */
+
+/* Barra de pesquisa no menu */
+
+/* Estilização da barra de pesquisa */
+.barra-pesquisa {
+    position: relative;
+    width: 300px;
+    margin: 50px auto;
+}
+
+#busca {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    font-size: 16px;
+}
+
+#busca::placeholder{
+    color: rgb(125, 125, 125);
+}
+
+#busca:focus::placeholder{
+    color: gray;
+}
+/* Sugestões de pesquisa */
+.container-sugest {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #ccc;
+    border-top: none;
+    display: none; /* Inicia invisível */
+    z-index: 1000;
+}
+
+.container-sugest div {
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.container-sugest div:hover {
+    background: #cccccc;
+}
+
+/* =========== */
+
+/* Opções no menu */
+
+.menu-topo li{
+    display: inline-block;
+    margin: 0px 50px 0px 0px;
+}
+
+.menu-topo li a{
+    font-size: 0.7rem;
+    text-decoration: none;
+    border: 0px solid #ccc;
+    border-radius: 25px;
+    background-color: #d9dbb3;
+    color: black;
+    padding: 15px;
+
+}
+
+.menu-topo li a:hover{
+    background-color: gray;
+
+}
+
+/* #endregion */

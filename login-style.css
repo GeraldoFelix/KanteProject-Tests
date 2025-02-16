@@ -1,0 +1,119 @@
+body{
+    min-height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(to top, hsl(240, 100%, 0%) 25%, #0D0319 60%, #20093C 75%, #090520 90%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container-login{
+    display: flex;
+    width: 45vw;
+    height: 55vh;
+    padding: 10px;
+    border-radius: 30px;
+    margin: 0 auto;
+    background-image: linear-gradient(to bottom, #271C65, #151518);
+}
+
+.container-esquerda{
+    width: 50%;
+    padding-right: 10px;
+    border-right: 4px solid rgb(127, 127, 127);
+}
+
+.logo-login{
+    display: flex;
+
+    justify-content: center;
+}
+
+.logo-login img{
+    width: 5.5em;
+    height: 5.5em;
+    background-color: whitesmoke;
+    border-radius: 100%;
+    margin: 5px;
+}
+
+.google-login{
+    width: 80%;
+    margin: 40% 0 0 10%;
+}
+
+.google-botao{
+    width: 100%;
+    padding: 10px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.google-icon{
+    position: absolute;
+    margin: -7px 0px 0px 3px;
+    height: 3.3em;
+    width: 3.3em;
+}
+
+.kante-login{
+    width: 50%;
+    padding-left: 10px;
+}
+
+.kante-login h2{
+    color: white;
+    margin: 20px 0 0 40%;
+}
+
+.kante-login .opcoes{
+    margin: 27% 0 0 14%;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.kante-login a{
+    font-size: 0.8em;
+    text-decoration: none;
+    color: white;
+}
+
+#form-login{
+    position: relative;
+    top: 20%;
+    margin: 0px 0px 0px 15%;
+    color: white;
+}
+
+#form-login label{
+    margin-left: 10px;
+}
+
+#form-login input{
+    width: 80%;
+    margin: 10px 0 25px 0;
+    border-radius: 5px;
+    border: 2px solid rgb(255, 255, 255);
+    background-color: rgba(0,0,0,0);
+    color: white;
+    padding: 10px;
+}
+
+#form-login button{
+    width: 80%;
+    padding: 7px;
+    background-color: #EBE347;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
