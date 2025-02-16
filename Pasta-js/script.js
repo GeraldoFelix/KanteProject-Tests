@@ -1,6 +1,6 @@
 async function buscarArtistas() {
     try {
-        const response = await fetch("http://127.0.0.1:5000/top-artistas");  // Chama a API do Flask
+        const response = await fetch("http://127.0.0.1:5000");  // Chama a API do Flask
         const artistas = await response.json();
 
         const lista = document.getElementById("lista-artistas");
