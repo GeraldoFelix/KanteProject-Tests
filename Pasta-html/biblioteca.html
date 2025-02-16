@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="../Pasta-css/header.css">
     <link rel="stylesheet" href="../Pasta-css/footer-style.css">
+    <link rel="icon" href="../Imagens/Kante v2.png" type="image/png">
+    <script src="../Pasta-js/header-function.js"></script>
+    <script defer src="../Pasta-js/barra_pesquisa.js"></script>
+    <title> Kante </title>
     <style>
         .container-centro{
             width: 100vw;
@@ -70,7 +73,6 @@
         }
         
     </style>
-    <script src="../Pasta-js/header-function.js"></script>
 </head>
 <body>
     <header>
@@ -105,9 +107,9 @@
             <img src="../Imagens/Kante.png" class="logo-imagem">
         </a>
 
-        <div class="aparencia-barra-pesquisa">
-            <img src="../Imagens/Lupa_icon.png" class="lupa-imagem">
-            <input class="barra-pesquisa" type="text" placeholder="Procure sua música ou letra."> 
+        <div class="barra-pesquisa">
+            <input type="text" id="busca" placeholder="Pesquisar por músicas" onkeyup="MostrarSugestao()">
+            <div class="container-sugest" id="sugest"></div>
         </div>
 
         <div class="menu-topo">

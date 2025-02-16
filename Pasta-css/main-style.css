@@ -8,14 +8,6 @@
 
 /* #region Body  */
 
-body{
-    min-height: 100vh;
-    background-image: linear-gradient(to top, hsl(240, 100%, 0%) 25%, #0D0319 60%, #20093C 75%, #090520 90%);
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
-
 .container-centro{
     width: 100vw;
     display: flex;
