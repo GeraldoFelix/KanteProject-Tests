@@ -8,24 +8,9 @@
     <link rel="stylesheet" href="../Pasta-css/login-style.css">
     <link rel="stylesheet" href="../Pasta-css/header.css">
     <link rel="icon" href="../Imagens/Kante v2.png" type="image/png">
+    <script defer src="../Pasta-js/login-function.js"></script>
+
     <title> Kante </title>
-
-    <script>
-        document.getElementById('form-login').addEventListener('submit', function(event) {
-            event.preventDefault(); // Impede o recarregamento da página
-
-            const nome = document.getElementById('nome').value;
-            const senha = document.getElementById('senha').value;
-
-            if (nome === '' || senha === '') {
-                alert('Por favor, preencha todos os campos!');
-                return;
-            }
-
-            // Redireciona para a página principal
-            window.location.href = 'main.html';
-        });
-    </script>
 
 </head>
 <body>
@@ -54,8 +39,7 @@
                 <label for="senha" class="label">Senha: </label><br>
                 <input id="senha" type="password" placeholder="Senha 123">
 
-                <button type="submit" id="botao-login" class="botao-login"> Entrar </button>
-
+                <button type="submit"> Entrar </button>
 
             </form>
 

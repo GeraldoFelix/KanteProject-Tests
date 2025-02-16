@@ -5,36 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../Pasta-css/header.css">
+    <link rel="stylesheet" href="../Pasta-css/footer-style.css">
     <style>
-        main{
+        .container-centro{
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container-geral{
             display:flex;
             color:aliceblue;
             height: 90vh;
             width: 90vw;
             background-color: rgb(31, 14, 43);
             border-radius: 10px 10px 0 0;
-            margin: 100px 0px 0px 50px; /*100 px no topo e 50 px na esquerda */
-            overflow: hidden;
         }
 
         .galeria{
-            height: inherit;
+            height: 50%;
+            width: 100%;
             display: flex;
             align-items: center;
-            justify-content: center;
             flex-wrap: wrap;
+            margin-top: 150px;
 
         }
         
-        .seçao{
+        .seçao a{
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             justify-items: center; /* Centraliza cada imagem */
+            gap: 10px;
+            align-items: start;
+        }
 
+        .seçao p{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            color: white;
+            margin-top: 10px;
+            font-size: 1.1em;
+            
         }
 
         .titulo h2{
-            font-size: 30px;
+            font-size: 2em;
             position: absolute;
             margin: 50px 0 0 50px;
             padding-bottom: 5px;
@@ -45,13 +64,13 @@
             border-radius: 20px;
             box-shadow: 10px 10px 20px rgba(11, 0, 12, 0.473);
             width: 8em;
-            height: auto;
+            height: 8em;
             background: rgb(56, 29, 59);
             text-align: center;
         }
         
     </style>
-    <script src="../main-functions.js"></script>
+    <script src="../Pasta-js/header-function.js"></script>
 </head>
 <body>
     <header>
@@ -101,48 +120,78 @@
 
     </header>
 
-    <main>
-        <div class="titulo">
-            <h2>Biblioteca</h2>
+    <main class="container-centro">
+        <div class="container-geral">
+            <div class="titulo">
+                <h2>Biblioteca</h2>
+            </div>
+
+            <div class="galeria">
+                <div class="seçao">
+                    <a>
+                        <img src="https://lh3.googleusercontent.com/AjyWHeeIoGtNWkjO9CXiSjNus4Sx26RNs4Y2I15FA0mr8SjojHVpo5bkFGWHBXxBG8jQpR3x_6DWlhU=w120-h120-l90-rj">
+                        <p> LemonSoda </p>
+                    </a>
+                </div>
+                <div class="seçao">
+                    <a>
+                        <img src="https://disconecta.com.br/wp-content/uploads/2024/03/A_Revolta_dos_Dandis-jpg.webp">
+                        <p> Engenheiros do Hawaii </p>
+                    </a>
+                </div>
+
+                <div class="seçao">
+                    <a>
+                        <img src="https://i.scdn.co/image/ab6761610000e5eb2b61503716c9cbb86f6a0658">
+                        <p> Shank </p>
+                    </a>
+                </div>
+                <div class="seçao">
+                    <a>
+                        <img src="https://lh3.googleusercontent.com/j3r_JjcQRRfZGUjWSrSDMXNzmVgc3bQK5jwj3YE-OlUQZRk6DxgZtOl-xSoUofk88ovkyvbaiL6kfI8=w544-h544-l90-rj">
+                        <p> Summer Salt </p>
+                    </a>
+                </div>
+                <div class="seçao">
+                    <a>
+                        <img src="https://lh3.googleusercontent.com/AjyWHeeIoGtNWkjO9CXiSjNus4Sx26RNs4Y2I15FA0mr8SjojHVpo5bkFGWHBXxBG8jQpR3x_6DWlhU=w120-h120-l90-rj">
+                        <p> LemonSoda </p>
+                    </a>
+                </div>
+
+                <div class="seçao">
+                    <a>
+                        <img src="https://akamai.sscdn.co/letras/360x360/albuns/1/4/a/5/1846211688390324.jpg">
+                        <p> Jack Stauber </p>
+                    </a>
+                </div>
+
+                <div class="seçao">
+                    <a>
+                        <img src="https://lh3.googleusercontent.com/7BMiO7nt2XYlLtuNAfdK38TxWOB2KjQeQuIeERdCIwjMm-8ifEAlN2obE64_jeaSPO7NtNbo12vb5RgIEw=w544-h544-l90-rj">
+                        <p> Michael Jackson </p>
+                    </a>    
+                </div>
+
+            </div>
         </div>
-
-        <div class="galeria">
-            <div class="seçao">
-                <a><img src="https://lh3.googleusercontent.com/AjyWHeeIoGtNWkjO9CXiSjNus4Sx26RNs4Y2I15FA0mr8SjojHVpo5bkFGWHBXxBG8jQpR3x_6DWlhU=w120-h120-l90-rj"></a>
-            </div>
-            <div class="seçao">
-                <a><img src="https://disconecta.com.br/wp-content/uploads/2024/03/A_Revolta_dos_Dandis-jpg.webp"></a>
-            </div>
-
-            <div class="seçao">
-                <a><img src="https://i.scdn.co/image/ab6761610000e5eb2b61503716c9cbb86f6a0658"></a>
-            </div>
-            <div class="historico">
-                
-            </div>
-            <div class="seçao">
-                <a><img src="https://lh3.googleusercontent.com/j3r_JjcQRRfZGUjWSrSDMXNzmVgc3bQK5jwj3YE-OlUQZRk6DxgZtOl-xSoUofk88ovkyvbaiL6kfI8=w544-h544-l90-rj"></a>
-            </div>
-            <div class="seçao">
-                <a><img src="https://lh3.googleusercontent.com/5611g9jhOUUluKTRma9CC7N9-3CILxCLqN96hw_CTJ2EJsjkbUgU63inbj7bsn41a91bqIN8QmxawwQ=w544-h544-l90-rj"></a>
-            </div>
-            <div class="seçao">
-                <a><img src="https://lh3.googleusercontent.com/AjyWHeeIoGtNWkjO9CXiSjNus4Sx26RNs4Y2I15FA0mr8SjojHVpo5bkFGWHBXxBG8jQpR3x_6DWlhU=w120-h120-l90-rj"></a>
-            </div>
-
-            <div class="seçao">
-                <a><img src="https://akamai.sscdn.co/letras/360x360/albuns/1/4/a/5/1846211688390324.jpg"></a>
-            </div>
-
-            <div class="seçao">
-                <a><img src="https://lh3.googleusercontent.com/7BMiO7nt2XYlLtuNAfdK38TxWOB2KjQeQuIeERdCIwjMm-8ifEAlN2obE64_jeaSPO7NtNbo12vb5RgIEw=w544-h544-l90-rj"></a>
-            </div>
-
-        </div>
-
     </main>
     
+    <footer class="rodape"> 
 
+        <div class="menu-rodape">
+            <p> Sobre </p>
+
+            <div class="links-externos">
+                <a href="https://instagram.com/kkabriel_/" target="_blank">
+                    <img src="../Imagens/Instagram_logo.png" alt="Instagram" class="imagem-rodape">
+                </a>
+            </div>
+        </div>
+
+        <p> © 2025 Kante - Todos os direitos reservados.</p>
+
+    </footer>
 
 </body>
 </html>
