@@ -26,7 +26,7 @@ def buscartop(resposta):
     
     print("🎶 Top 10 artistas no Last.fm:")
     for i, artista in enumerate(artistas, 1):
-        print(f"{i}. {artista['name']} - {artista['listeners']} ouvintes")
+        print(f"{i}. {artista['name']}")
         top4.append(artista['name'])
     else:
        print("Erro ao buscar os artistas do Last.fm")
