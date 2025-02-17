@@ -17,4 +17,5 @@ def artistas():
     return jsonify(artistas_info)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.getenv("PORT", 5000))  # Usa 5000 por padrão se a variável PORT não estiver definida
+    app.run(debug=True, host="0.0.0.0", port=port)
