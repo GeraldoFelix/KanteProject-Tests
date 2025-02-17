@@ -1,6 +1,6 @@
 async function carregarArtistas() {
     try {
-        const resposta = await fetch("http://127.0.0.1:5000/api/artistas");
+        const resposta = await fetch("https://kanteproject-tests.onrender.com/api/artistas");
         if (!resposta.ok) throw new Error("Erro ao buscar os artistas.");
 
         const artistas = await resposta.json();
