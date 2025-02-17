@@ -1,3 +1,4 @@
+import os
 from flask import Flask, jsonify
 from spotify import get_artist_image
 from flask_cors import CORS
