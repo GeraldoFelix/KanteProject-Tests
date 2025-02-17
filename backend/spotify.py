@@ -19,7 +19,7 @@ auth_response = requests.post(AUTH_URL, {
 auth_data = auth_response.json()
 ACCESS_TOKEN = auth_data["access_token"]
 
-# Função para buscar imagens dos artistas
+
 def get_artist_image(artist_name):
     search_url = "https://api.spotify.com/v1/search"
     headers = {"Authorization": f"Bearer {ACCESS_TOKEN}"}
@@ -38,7 +38,26 @@ def get_artist_image(artist_name):
             return name, image_url
     return artist_name, "Não encontrado"
 
-# Buscar imagens dos artistas
+def get_album_image(track_name, artist_name):
+    search_url = 'https://api.spotify.com/v1/search'
+    params = {
+        'q': f'track:{track_name} artist:{artist_name}',
+        'type': 'track',
+        'limit': 1
+    }
+    headers = {
+        'Authorization': f'Bearer {ACCESS_TOKEN}'
+    }
+    search_response = requests.get(search_url, headers=headers, params=params)
+    search_data = search_response.json()
+    if 'tracks' in search_data and search_data['tracks']['items']:
+        track_info = search_data['tracks']['items'][0]
+        album_images = track_info['album']['images']
+        if album_images:
+            return album_images[0]['url']  
+    return None
+
+# isso é so ver se ta funcionando
 for artist in top4:
     name, image = get_artist_image(artist)
-    print(f"🎤 {name}: {image}")
+    print(f"{name}: {image}")

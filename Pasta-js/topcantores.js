@@ -4,10 +4,10 @@ async function carregarArtistas() {
         if (!resposta.ok) throw new Error("Erro ao buscar os artistas.");
 
         const artistas = await resposta.json();
-        console.log("Artistas carregados:", artistas); // Debug no console
+        console.log("Artistas carregados:", artistas); 
 
-        const container = document.querySelector(".container-imagens");
-        container.innerHTML = ""; // Limpa os dados anteriores
+        const container = document.querySelector(".container-imagecantores");
+        container.innerHTML = ""; 
 
         if (artistas.length === 0) {
             container.innerHTML = "<p>Nenhum artista encontrado.</p>";
@@ -31,4 +31,4 @@ async function carregarArtistas() {
     }
 }
 
-window.onload = carregarArtistas;
+document.addEventListener("DOMContentLoaded", carregarArtistas);
