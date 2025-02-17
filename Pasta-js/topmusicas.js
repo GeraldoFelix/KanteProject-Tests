@@ -1,6 +1,6 @@
 async function carregarMusicas() {
     try {      
-        const resposta = await fetch("http://192.168.5.101:5000/api/musicas");
+        const resposta = await fetch("https://kanteproject-tests.onrender.com/api/musicas");
         if (!resposta.ok) throw new Error("Erro ao buscar as músicas.");
 
         const musicas = await resposta.json();
