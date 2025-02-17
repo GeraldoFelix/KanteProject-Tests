@@ -47,9 +47,9 @@
             <img src="../Imagens/Kante.png" class="logo-imagem">
         </a>
 
-        <div class="aparencia-barra-pesquisa">
-            <img src="../Imagens/Lupa_icon.png" class="lupa-imagem">
-            <input class="barra-pesquisa" type="text" placeholder="Procure sua música ou letra."> 
+        <div class="barra-pesquisa">
+            <input type="text" id="busca" placeholder="Pesquisar por músicas" onkeyup="MostrarSugestao()">
+            <div class="container-sugest" id="sugest"></div>
         </div>
 
         <div class="menu-topo">
