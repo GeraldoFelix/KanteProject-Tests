@@ -25,7 +25,7 @@ def limpar_titulo(titulo):
     titulo_limpo = re.sub(r"with .*", "", titulo_limpo, flags=re.IGNORECASE)  # Remove "with IZA" se existir
     return titulo_limpo.strip()  # Remove espaços extras
 
-@app.route('/letra', methods=['GET'])
+@app.route('/letra')
 def obter_letra():
     musica = request.args.get('musica')
     artista = request.args.get('artista')
