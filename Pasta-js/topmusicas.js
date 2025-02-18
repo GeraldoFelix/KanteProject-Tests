@@ -20,9 +20,7 @@ async function carregarMusicas() {
 
             div.innerHTML = `
                 <img src="../Imagens/Botao_play.png" class="botao-tocar">
-                <a href="musica.html?musica=${encodeURIComponent(musica.name)}&artista=${encodeURIComponent(musica.artist)}">
-                    <img src="${musica.image}" class="imagens" alt="${musica.name}">
-                </a>
+                <img src="${musica.image}" class="imagens" alt="${musica.name}">
                 <p>${musica.name}</p>
                 <p class="artista">${musica.artist}</p>
             `;
