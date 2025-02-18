@@ -14,7 +14,7 @@ if (musica && artista) {
     document.getElementById('artista').innerText = artista;
 
     // Chamar a API para buscar a letra da música
-    fetch(`https://kanteproject-tests.onrender.com/letras?musica=${encodeURIComponent(musica)}&artista=${encodeURIComponent(artista)}`)
+    fetch(`https://kanteproject-tests.onrender.com/letra?musica=${encodeURIComponent(musica)}&artista=${encodeURIComponent(artista)}`)
         .then(response => response.json())
         .then(data => {
             document.getElementById('letra').innerText = data.lyrics || "Letra não encontrada.";
