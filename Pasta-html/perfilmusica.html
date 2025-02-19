@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauê e Yasmom">
+    <meta name="description" content="Seu site para descobrir letras de músicas">
+    <link rel="icon" href="Imagens/Kante v2.png" type="image/png">
+    <link rel="stylesheet" href="../Pasta-css/header.css">
+    <link rel="stylesheet" href="../Pasta-css/footer-style.css">
+    <script src="../Pasta-js/header-function.js"></script>
+    <script src="../Pasta-js/perfilmusica.js" defer></script>
+
+    <title>Kante</title>
+    <style>
+        body {
+            background-image: linear-gradient(to top, hsl(240, 100%, 0%) 25%, #0D0319 60%, #20093C 75%, #090520 90%);
+            overflow-x: hidden;
+        }
+
+        .container-centro {
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container-geral {
+            border-radius: 10px 10px 0 0;
+            background: rgb(37, 19, 49);
+            width: 90vw;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .perfil {
+            display: flex;
+            align-items: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .perfil img {
+            width: 8em;
+            height: 8em;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .container-musica {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .letras {
+            flex: 1;
+            max-width: 60%;
+            color: white;
+            text-align: justify;
+        }
+
+        .video {
+            flex: 1;
+            max-width: 40%;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .video iframe {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../Pasta-html/main.html" class="container-logo">
+            <img src="../Imagens/Kante.png" class="logo-imagem">
+        </a>
+    </header>
+    
+    <main class="container-centro">
+        <div class="container-geral">
+            <div class="perfil">
+                <img id="musica-imagem" src="" alt="Capa da Música">
+                <div>
+                    <h2 id="musica-nome"></h2>
+                    <h3 id="artista-nome"></h3>
+                </div>
+            </div>
+
+            <div class="container-musica">
+                <div class="letras">
+                    <p id="musica-letra"></p>
+                </div>
+                <div class="video">
+                    <iframe id="musica-video" width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

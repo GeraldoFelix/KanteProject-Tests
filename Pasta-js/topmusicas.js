@@ -4,7 +4,7 @@ async function carregarMusicas() {
         if (!resposta.ok) throw new Error("Erro ao buscar as músicas.");
 
         const musicas = await resposta.json();
-        console.log("Músicas carregadas:", musicas); 
+        console.log("Músicas carregadas:", musicas);
 
         const container = document.querySelector(".container-imagemusicas");
         container.innerHTML = ""; 
@@ -17,6 +17,7 @@ async function carregarMusicas() {
         musicas.forEach(musica => {
             const div = document.createElement("div");
             div.classList.add("organizador");
+            div.onclick = () => irParaMusica(musica.name, musica.artist); // Chama a função ao clicar
 
             div.innerHTML = `
                 <img src="../Imagens/Botao_play.png" class="botao-tocar">
@@ -30,6 +31,12 @@ async function carregarMusicas() {
     } catch (erro) {
         console.error("Erro ao carregar músicas:", erro);
     }
+}
+
+// Função para redirecionar o usuário para a página da música
+function irParaMusica(musica, artista) {
+    const url = `perfilmusica.html?musica=${encodeURIComponent(musica)}&artista=${encodeURIComponent(artista)}`;
+    window.location.href = url;
 }
 
 document.addEventListener("DOMContentLoaded", carregarMusicas);
